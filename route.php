@@ -33,10 +33,10 @@ switch ($params[0]) {
         break;
  /*   case 'logout': 
         $loginController->logout(); 
-        break;
+        break;*/
     case 'verify': 
         $loginController->verifyLogin(); 
-        break;*/
+        break;
     case 'home': 
         $homeController->showHome(); 
         break;

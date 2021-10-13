@@ -18,6 +18,7 @@ class LoginView{
     function showHome(){
         header("Location: ".BASE_URL."home");
     }
+    
     function showRegister($error = ""){
         $this->smarty->assign('titulo', 'Log In');   
         $this->smarty->assign('error', $error);      
