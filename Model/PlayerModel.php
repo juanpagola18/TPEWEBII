@@ -30,35 +30,21 @@ class PlayerModel{
 
     }
     function deletePlayer($id){
+
         $sentencia = $this->db->prepare( "DELETE FROM jugadores WHERE id = ?");
         $sentencia->execute(array($id));
-
+   
     }
     function createPlayer($name, $playedGames, $score, $team){
         $sentencia = $this->db->prepare( "INSERT INTO jugadores (nombre, partidosJugados, goles, id_equipo)
          VALUES(?,?,?,?)");
         $sentencia->execute(array($name, $playedGames, $score, $team));
     }
-
-   /* function insertTask($mermelada, $descripcion, $prioridad, $finalizada){
-        $sentencia = $this->db->prepare("INSERT INTO tareas(titulo, descripcion, prioridad, finalizada) VALUES(?, ?, ?, ?)");
-        $sentencia->execute(array($mermelada,$descripcion,$prioridad, $finalizada ));
-    }
-
-    function deleteTaskFromDB($id){
-        $sentencia = $this->db->prepare("DELETE FROM tareas WHERE id_tarea=?");
+    function editPlayer($id,$name,$partidos,$goles,$equipo){
+        $sentencia=$this->db->prepare("UPDATE jugadores SET nombre='$name', partidosJugados='$partidos', goles='$goles',
+        id_equipo='$equipo'WHERE id=?");
         $sentencia->execute(array($id));
     }
 
-    function updateTaskFromDB($id){
-        $sentencia = $this->db->prepare("UPDATE tareas SET finalizada=1 WHERE id_tarea=?");
-        $sentencia->execute(array($id));
-    }
-
-    function getTask($id){
-        $sentencia = $this->db->prepare( "select * from tareas WHERE id_tarea=?");
-        $sentencia->execute(array($id));
-        $tarea = $sentencia->fetch(PDO::FETCH_OBJ);
-        return $tarea;
-    }*/
+    
 }

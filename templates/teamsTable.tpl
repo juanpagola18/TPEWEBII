@@ -1,18 +1,4 @@
 <h1 class="">Equipos</h1>
-<div class="">
-{* Cargar el select de equipos 
-    <form action="" method=POST>
-    
-        <select name= "input_team">
-            {foreach from=$teams item=team}
-                <option value='{$team->team_id}'>{$team->name}</option>
-            {/foreach}
-        </select>
-        <button type="submit"> Ver categoria seleccionada</button>
-        <button><a href='fighters'>Ver todos </a></button>
-    </form>
-</div>
-    *}
 
 <table class="">
     <thead>

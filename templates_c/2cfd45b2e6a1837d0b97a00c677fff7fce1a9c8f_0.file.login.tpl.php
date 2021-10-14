@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 00:19:27
+/* Smarty version 3.1.39, created on 2021-10-14 20:26:05
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61675b6f4486e7_07396138',
+  'unifunc' => 'content_6168763d9cc2b7_77287255',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2cfd45b2e6a1837d0b97a00c677fff7fce1a9c8f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\templates\\login.tpl',
-      1 => 1634163528,
+      1 => 1634235857,
       2 => 'file',
     ),
   ),
@@ -22,12 +22,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_61675b6f4486e7_07396138 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168763d9cc2b7_77287255 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <div class="container">
-
+    
     <div class="row mt-4">
         <div class="col-md-4">
             <h2>Log In</h2>

@@ -37,6 +37,7 @@ class PlayerController{
         $this->loadSelectEquipos();
         $jugadoresByEquipo = $this->model->getPlayersByTeam($id);
         $this->view->showPlayers($jugadoresByEquipo);
+       
     
     }
 

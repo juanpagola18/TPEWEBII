@@ -18,8 +18,8 @@
             <td>{$player->partidosJugados}</td>
             <td>{$player->goles}</td>
             <td>{$player->nombreEquipo}</td>
-            <td><a href="delete/{$player->id}">Borrar</a></td>
-            <td><a href="edit/{$player->id}">Editar</a></td>
+            <td><a href="deletePlayer/{$player->id}">Borrar</a></td>
+            <td><a href="editPlayerMenu/{$player->id}">Editar</a></td>
         </tr> 
         {/foreach}
         
@@ -29,7 +29,7 @@
 
     <div class="">
         <form action="addPlayer" method=POST>
-            <h2>Agregar Peleadores</h2>
+            <h2>Agregar Jugador</h2>
             <label>Nombre y Apellido</label>
             <input name="name" type="text" placeholder="Nombre y Apellido..." required>
             <label>Partidos Jugados</label>

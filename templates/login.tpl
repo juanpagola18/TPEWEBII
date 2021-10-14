@@ -1,7 +1,7 @@
 {include file='templates/header.tpl'}
 
 <div class="container">
-
+    
     <div class="row mt-4">
         <div class="col-md-4">
             <h2>Log In</h2>

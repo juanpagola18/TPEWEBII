@@ -17,6 +17,8 @@
                 <li><a href="teams">EQUIPOS</a></li>
                 <li><a href="players">JUGADORES</a></li>
                 <li><a href="loginForm">REGISTRO</a></li>
-                <li><a href="edit">EDITAR</a></li>
+                <li><a href="adminPlayer">EDITAR JUGADORES</a></li>
+                <li><a href="adminTeam">EDITAR EQUIPOS</a></li>
             </ul>
+            
         </nav>

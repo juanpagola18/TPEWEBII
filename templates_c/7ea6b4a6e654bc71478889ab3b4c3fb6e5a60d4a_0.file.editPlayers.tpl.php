@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 01:30:23
+/* Smarty version 3.1.39, created on 2021-10-14 19:20:03
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\templates\editPlayers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61676c0f392d90_82689072',
+  'unifunc' => 'content_616866c37c2cb9_76695864',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7ea6b4a6e654bc71478889ab3b4c3fb6e5a60d4a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\templates\\editPlayers.tpl',
-      1 => 1634167276,
+      1 => 1634231806,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61676c0f392d90_82689072 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616866c37c2cb9_76695864 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h1 class="">Editar Jugadores</h1>
     
 
@@ -50,9 +50,9 @@ $_smarty_tpl->tpl_vars['player']->do_else = false;
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['player']->value->nombreEquipo;?>
 </td>
-            <td><a href="delete/<?php echo $_smarty_tpl->tpl_vars['player']->value->id;?>
+            <td><a href="deletePlayer/<?php echo $_smarty_tpl->tpl_vars['player']->value->id;?>
 ">Borrar</a></td>
-            <td><a href="edit/<?php echo $_smarty_tpl->tpl_vars['player']->value->id;?>
+            <td><a href="editPlayerMenu/<?php echo $_smarty_tpl->tpl_vars['player']->value->id;?>
 ">Editar</a></td>
         </tr> 
         <?php
@@ -65,7 +65,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
     <div class="">
         <form action="addPlayer" method=POST>
-            <h2>Agregar Peleadores</h2>
+            <h2>Agregar Jugador</h2>
             <label>Nombre y Apellido</label>
             <input name="name" type="text" placeholder="Nombre y Apellido..." required>
             <label>Partidos Jugados</label>

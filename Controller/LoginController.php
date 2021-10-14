@@ -66,7 +66,7 @@ class LoginController {
                 session_start();
                 $_SESSION["email"] = $email;
                 
-                $this->view->showHome();
+                $this->view->showLogin("Logueado Exitosamente");
             } else {
                 $this->view->showLogin("Acceso denegado");
             }

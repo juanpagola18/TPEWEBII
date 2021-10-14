@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 00:00:11
+/* Smarty version 3.1.39, created on 2021-10-14 18:54:40
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616756eb398531_84247811',
+  'unifunc' => 'content_616860d031d2b4_43230373',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4dc29070d12e7a3427fb2ef073885008ee3a030f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\templates\\header.tpl',
-      1 => 1634162389,
+      1 => 1634230423,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616756eb398531_84247811 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616860d031d2b4_43230373 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +41,9 @@ function content_616756eb398531_84247811 (Smarty_Internal_Template $_smarty_tpl)
                 <li><a href="teams">EQUIPOS</a></li>
                 <li><a href="players">JUGADORES</a></li>
                 <li><a href="loginForm">REGISTRO</a></li>
-                <li><a href="edit">EDITAR</a></li>
+                <li><a href="adminPlayer">EDITAR JUGADORES</a></li>
+                <li><a href="adminTeam">EDITAR EQUIPOS</a></li>
             </ul>
+            
         </nav><?php }
 }

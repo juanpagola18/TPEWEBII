@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2021 a las 20:06:01
+-- Tiempo de generación: 14-10-2021 a las 20:27:44
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -39,8 +39,10 @@ CREATE TABLE `equipos` (
 --
 
 INSERT INTO `equipos` (`id_equipo`, `nombreEquipo`, `pais`, `campeonatos`) VALUES
-(1, 'Boca Juniors', 'Argentina', 70),
-(2, 'River Plate', 'Argentina', 56);
+(2, 'River Plate', 'Argentina', 56),
+(4, 'San Lorenzo', 'Argentina', 22),
+(5, 'Boca Juniors', 'Argentina', 70),
+(7, 'Racing Club', 'Arg', 37);
 
 -- --------------------------------------------------------
 
@@ -61,8 +63,11 @@ CREATE TABLE `jugadores` (
 --
 
 INSERT INTO `jugadores` (`id`, `nombre`, `partidosJugados`, `goles`, `id_equipo`) VALUES
-(1, 'JUAN', 8, 22, 1),
-(2, 'Agustin', 200, 820, 1);
+(7, 'Roberto', 40, 3, 2),
+(20, 'Carlos', 40, 2, 4),
+(21, 'Juan', 30, 5, 5),
+(22, 'Ricardo', 2, 5, 2),
+(23, 'Carlitos', 177, 25, 5);
 
 -- --------------------------------------------------------
 
@@ -85,7 +90,10 @@ INSERT INTO `usuarios` (`id_user`, `nick`, `usuario`, `contraseña`) VALUES
 (1, 'juanpagola', 'admin@gmail.com', '$2y$10$Tms4Lo5VEy/ClHDIHyCOTe2I4LJuDo0S5Ga0tNdhjGXacyAaccoNS'),
 (2, 'juanpagola3', 'admin@gmail.coma', '$2y$10$Y1rczzWY01PVBHlMTKCq9eaznLCdLXzn0KinVu161OMLW/uEGiMQa'),
 (3, 'juanpagola', 'admin@gmail.com3', '$2y$10$tBLJFGAzogeY2LWr5sfft.FyOerlhMk3aF6oQTr/ix2bYmQ8HcJ1u'),
-(4, 'juanpagola', 'ee@ee', '$2y$10$3CWAhXikei9SxHOwcguYzuzTt4FnUoyxYOd5fabfwlc7N3Dv8dydS');
+(4, 'juanpagola', 'ee@ee', '$2y$10$3CWAhXikei9SxHOwcguYzuzTt4FnUoyxYOd5fabfwlc7N3Dv8dydS'),
+(5, 'agustin', 'agustin@gmail.com', '$2y$10$o0vy9NSbl46xxog1DRwQXuWnzRPumLXnrh.AsXoZZMVNA.4X7LmGC'),
+(6, 'agusti', 'agus@gmail.com', '$2y$10$t6I5MrRuH/HMRG.1Vih6BuKlASHG2mrGfFfst.j3lZRUUOYRgG0dK'),
+(7, 'juan', 'admin1@gmail.com', '$2y$10$kimqxXsCp/ICivKkFWrchu1q1RCszuXSMMnuqr/RyhHt1mvAQrFQS');
 
 --
 -- Índices para tablas volcadas
@@ -118,19 +126,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

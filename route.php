@@ -10,7 +10,7 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'home'; // acción por defecto si no envían
+    $action = 'home'; 
 }
 $params = explode('/', $action);
 
@@ -21,7 +21,7 @@ $teamsController = new TeamController();
 $editController = new EditController();
 
 
-// determina que camino seguir según la acción
+
 switch ($params[0]) {
     case 'loginForm': 
         $loginController->login(); 
@@ -53,21 +53,37 @@ switch ($params[0]) {
     case 'selectEquipos':
         $playersController->showByEquipo($_POST['equipo']);
         break;
-    case 'edit':
-        $editController->showEditMenu();
+    case 'adminPlayer':
+        $editController->showEditPlayerMenu();
         break;
-    case 'delete';
+    case 'adminTeam':
+        $editController->showEditTeamMenu();
+        break;
+    case 'deletePlayer';
         $editController->deletePlayer($params[1]);
+        break;
+    case 'deleteTeam';
+        $editController->deleteTeam($params[1]);
         break;
     case 'addPlayer':
         $editController->addPlayer($_POST['name'],$_POST['playedGames'],$_POST['score'],$_POST['team']);
         break;
-   /* case 'updateTask': 
-        $taskController->updateTask($params[1]); 
+    case 'addTeam':
+        $editController->addTeam($_POST['teamName'],$_POST['country'],$_POST['championships']);
         break;
-    case 'viewTask': 
-        $taskController->viewTask($params[1]); 
-        break;*/
+    case 'editPlayerMenu';
+        $editController->editPlayerMenu($params[1]);
+        break;
+    case 'editTeamMenu';
+        $editController->editTeamMenu($params[1]);
+        break;
+    case 'editPlayer';
+        $editController->editPlayer($params[1],$_POST['newName'],$_POST['newPlayedGames'],$_POST['newScore'],$_POST['newTeam']);
+        break;
+    case 'editTeam';
+        $editController->editTeam($params[1],$_POST['newTeamName'],$_POST['newCountry'],$_POST['newChampionships']);
+        break;
+
     default: 
         echo('404 Page not found'); 
         break;
