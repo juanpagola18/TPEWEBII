@@ -8,17 +8,36 @@ class PlayerModel{
     }
 
     function getPlayers(){
-        $sentencia = $this->db->prepare( "SELECT * FROM jugadores");
+        $sentencia = $this->db->prepare( "SELECT a.*, b.* FROM jugadores a LEFT JOIN equipos b ON a.id_equipo=b.id_equipo");
         $sentencia->execute();
         $players = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $players;
     } 
     function getPlayer($id){
-        $sentencia = $this->db->prepare( "SELECT * FROM jugadores WHERE id=?");
+        $sentencia = $this->db->prepare( "SELECT a.*, b.* FROM jugadores a LEFT JOIN equipos b ON a.id_equipo=b.id_equipo 
+        WHERE id=?");
         $sentencia->execute(array($id));
         $player = $sentencia->fetch(PDO::FETCH_OBJ);
         return $player;
 
+    }
+    function getPlayersByTeam($id){
+        $sentencia = $this->db->prepare( "SELECT a.*, b.* FROM jugadores a LEFT JOIN equipos b ON
+         a.id_equipo=b.id_equipo WHERE a.id_equipo=?");
+        $sentencia->execute(array($id));
+        $jugadores = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $jugadores;
+
+    }
+    function deletePlayer($id){
+        $sentencia = $this->db->prepare( "DELETE FROM jugadores WHERE id = ?");
+        $sentencia->execute(array($id));
+
+    }
+    function createPlayer($name, $playedGames, $score, $team){
+        $sentencia = $this->db->prepare( "INSERT INTO jugadores (nombre, partidosJugados, goles, id_equipo)
+         VALUES(?,?,?,?)");
+        $sentencia->execute(array($name, $playedGames, $score, $team));
     }
 
    /* function insertTask($mermelada, $descripcion, $prioridad, $finalizada){

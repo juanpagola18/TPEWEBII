@@ -15,4 +15,6 @@ class TeamView{
         $this->smarty->display('templates/teamsTable.tpl');
         $this->smarty->display('templates/footer.tpl');
     }
+    
+   
 }

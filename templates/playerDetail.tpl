@@ -5,7 +5,7 @@
             <li>Nombre: {$player->nombre}</li>
             <li>Partidos Jugados: {$player->partidosJugados}</li>
             <li>Goles: {$player->goles}</li>
-            <li>Equipo: {$player->id_equipo}</li>
+            <li>Equipo: {$player->nombreEquipo}</li>
         </ul>
     </div>
 </div>

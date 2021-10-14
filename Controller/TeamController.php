@@ -3,9 +3,11 @@ require_once "./Model/TeamModel.php";
 require_once "./View/TeamView.php";
 require_once "./Helpers/AuthHelper.php";
 
+
 class TeamController{
     private $model;
     private $view;
+
 
     function __construct()
     {
@@ -20,5 +22,7 @@ class TeamController{
             $teams = $this->model->getTeams();
             $this->view->showTeams($teams);
         }
+    
+
 }
     

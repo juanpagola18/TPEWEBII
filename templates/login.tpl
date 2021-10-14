@@ -12,6 +12,7 @@
             </form>
         </div>
         <p>No tenes usuario?<button><a href='register'>Registrate</a></button></p>
+        <button><a href='logout'>Desloguearse</a></button>
     </div>
     <h4 class="alert-danger">{$error}</h4>
     

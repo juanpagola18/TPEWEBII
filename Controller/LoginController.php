@@ -12,11 +12,11 @@ class LoginController {
         $this->view = new LoginView();
     }
 
-  /*  function logout(){
+    function logout(){
         session_start();
         session_destroy();
         $this->view->showLogin("Te deslogueaste!");
-    }*/
+    }
 
     function login(){
         $this->view->showLogin();
@@ -53,18 +53,18 @@ class LoginController {
         }
     
     function verifyLogin(){
-        if (!empty($_POST['usuario']) && !empty($_POST['contraseña'])) {
-            $usuario = $_POST['usuario'];
-            $contraseña = $_POST['contraseña'];
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
+            $email = $_POST['email'];
+            $contraseña = $_POST['password'];
      
-            // Obtengo el usuario de la base de datos
-            $user = $this->model->getUser($usuario);
+            
+            $user = $this->model->getUser($email);
      
-            // Si el usuario existe y las contraseñas coinciden
-            if ($user && password_verify($contraseña, $usuario->contraseña)) {
+            
+            if ($user && password_verify($contraseña, $user->contraseña)) {
 
                 session_start();
-                $_SESSION["usuario"] = $usuario;
+                $_SESSION["email"] = $email;
                 
                 $this->view->showHome();
             } else {

@@ -10,9 +10,11 @@ class LoginView{
     }
 
     function showLogin($error = ""){
+        
         $this->smarty->assign('titulo', 'Log In');   
         $this->smarty->assign('error', $error);      
         $this->smarty->display('templates/login.tpl');
+       
     }
 
     function showHome(){
@@ -20,9 +22,11 @@ class LoginView{
     }
     
     function showRegister($error = ""){
+        $this->smarty->display('templates/header.tpl');
         $this->smarty->assign('titulo', 'Log In');   
         $this->smarty->assign('error', $error);      
         $this->smarty->display('templates/register.tpl');
+        $this->smarty->display('templates/footer.tpl');
     }
 
 }

@@ -8,6 +8,10 @@ class PlayerView {
         $this->smarty = new Smarty();
     }
 
+    function selectEquipos($teams){
+        $this->smarty->assign('teams', $teams);
+    }
+
     function showPlayers($players){
         $this->smarty->display('templates/header.tpl');        
         $this->smarty->assign('players', $players);
@@ -30,5 +34,12 @@ class PlayerView {
     function showLoginLocation(){
         header("Location: ".BASE_URL."login");
     }
+
+    function showEdit($players){
+        $this->smarty->display('templates/header.tpl');        
+        $this->smarty->assign('players', $players);
+        $this->smarty->display('templates/editPlayers.tpl');
+        $this->smarty->display('templates/footer.tpl');
+    }   
     
 }

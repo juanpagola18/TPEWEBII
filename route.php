@@ -3,7 +3,7 @@ require_once "Controller/PlayerController.php";
 require_once "Controller/LoginController.php";
 require_once "Controller/HomeController.php";
 require_once "Controller/TeamController.php";
-
+require_once "Controller/EditController.php";
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 
@@ -18,6 +18,7 @@ $playersController = new PlayerController();
 $loginController = new LoginController();
 $homeController = new HomeController();
 $teamsController = new TeamController();
+$editController = new EditController();
 
 
 // determina que camino seguir según la acción
@@ -31,9 +32,9 @@ switch ($params[0]) {
     case 'registerUser': 
         $loginController->registerUser(); 
         break;
- /*   case 'logout': 
+    case 'logout': 
         $loginController->logout(); 
-        break;*/
+        break;
     case 'verify': 
         $loginController->verifyLogin(); 
         break;
@@ -48,6 +49,18 @@ switch ($params[0]) {
         break;
     case 'teams':
         $teamsController->showTeams();
+        break;
+    case 'selectEquipos':
+        $playersController->showByEquipo($_POST['equipo']);
+        break;
+    case 'edit':
+        $editController->showEditMenu();
+        break;
+    case 'delete';
+        $editController->deletePlayer($params[1]);
+        break;
+    case 'addPlayer':
+        $editController->addPlayer($_POST['name'],$_POST['playedGames'],$_POST['score'],$_POST['team']);
         break;
    /* case 'updateTask': 
         $taskController->updateTask($params[1]); 
