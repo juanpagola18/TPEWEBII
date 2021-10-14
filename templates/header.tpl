@@ -11,14 +11,16 @@
     <title>Jugadores 2021</title>
 </head>
 <body>
-    <nav class="nav-hidden">
-            <ul>
-                <li><a href="home">INICIO</a></li>
-                <li><a href="teams">EQUIPOS</a></li>
-                <li><a href="players">JUGADORES</a></li>
-                <li><a href="loginForm">REGISTRO</a></li>
-                <li><a href="adminPlayer">EDITAR JUGADORES</a></li>
-                <li><a href="adminTeam">EDITAR EQUIPOS</a></li>
-            </ul>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
             
-        </nav>
+                <a class="navbar-brand" href="home">INICIO</a>
+                <a class="navbar-brand" href="teams">EQUIPOS</a>
+                <a class="navbar-brand" href="players">JUGADORES</a>
+                <a class="navbar-brand" href="loginForm">REGISTRO</a>
+                <a class="navbar-brand" href="adminPlayer">EDITAR JUGADORES</a>
+                <a class="navbar-brand" href="adminTeam">EDITAR EQUIPOS</a>
+            
+        </div>    
+    </nav>

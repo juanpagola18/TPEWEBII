@@ -2,17 +2,18 @@
 
 <div class="container">
     
-    <div class="row mt-4">
-        <div class="col-md-4">
+    <div class="row">
+        <div class="col">
             <h2>Log In</h2>
             <form class="form-alta" action="verify" method="post">
                 <input placeholder="email" type="text" name="email" id="email" required>
                 <input placeholder="password" type="password" name="password" id="password" required>
                 <input type="submit" class="btn btn-primary" value="Login">
             </form>
+        
+        <p class="card-body">No tenes usuario?<button class="btn btn-secondary"><a  href='register' class="btn btn-secondary">Registrate</a></button></p>
+        <button class="btn btn-danger"><a href='logout'>Desloguearse</a></button>
         </div>
-        <p>No tenes usuario?<button><a href='register'>Registrate</a></button></p>
-        <button><a href='logout'>Desloguearse</a></button>
     </div>
     <h4 class="alert-danger">{$error}</h4>
     

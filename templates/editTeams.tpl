@@ -1,11 +1,12 @@
-<h1 class="">Equipos</h1>
+<h1 class="card text-center">Equipos</h1>
 
-<table class="">
+<table class="table">
     <thead>
-        <th>Equipo</th>
-        <th>Pais</th>
-        <th>Campeonatos Ganados</th>
-        
+        <th scope="row">Equipo</th>
+        <th scope="row">Pais</th>
+        <th scope="row">Campeonatos Ganados</th>
+        <th scope="row">Borrar</th>
+        <th scope="row">Editar</th>
 
     </thead>
     <tbody>
@@ -14,15 +15,15 @@
             <td>{$team->nombreEquipo}</td>
             <td>{$team->pais}</td>
             <td>{$team->campeonatos}</td>
-            <td><a href="deleteTeam/{$team->id_equipo}">Borrar</a></td>
-            <td><a href="editTeamMenu/{$team->id_equipo}">Editar</a></td>
+            <td><a class="btn btn-danger" href="deleteTeam/{$team->id_equipo}">Borrar</a></td>
+            <td><a class="btn btn-primary" href="editTeamMenu/{$team->id_equipo}">Editar</a></td>
             
         </tr> 
         {/foreach}
         
     </tbody>
 </table>
-<div class="">
+<div class="t">
         <form action="addTeam" method=POST>
             <h2>Agregar Equipo</h2>
             <label>Nombre del Equipo</label>

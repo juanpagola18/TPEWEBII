@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 16:15:39
+/* Smarty version 3.1.39, created on 2021-10-15 00:39:01
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\templates\editSelectPlayer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61683b8b7dc566_63739977',
+  'unifunc' => 'content_6168b185590958_27187534',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c710b941ba7f9d82279f9c6687e2498717899c95' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\templates\\editSelectPlayer.tpl',
-      1 => 1634220872,
+      1 => 1634251049,
       2 => 'file',
     ),
   ),
@@ -20,16 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61683b8b7dc566_63739977 (Smarty_Internal_Template $_smarty_tpl) {
-?><h1 class="">Editar Jugadores</h1>
+function content_6168b185590958_27187534 (Smarty_Internal_Template $_smarty_tpl) {
+?><h1 class="text-center">Editar Jugadores</h1>
     
 
-<table class="">
+<table class="table">
     <thead>
-        <th>Nombre</th>
-        <th>Partidos Jugados</th>
-        <th>Goles</th>
-        <th>Nombre Equipo</th>
+        <th scope="row">Nombre</th>
+        <th scope="row">Partidos Jugados</th>
+        <th scope="row">Goles</th>
+        <th scope="row">Nombre Equipo</th>
 
 
     </thead>
@@ -74,7 +74,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </select>
                 
 
-                <button>EDITAR</button>        
+                <button class="btn btn-secondary">EDITAR JUGADOR</button>        
             </form>   
         </div><?php }
 }

@@ -14,7 +14,7 @@ class TeamModel{
     } 
     function getTeam($id){
         $sentencia = $this->db->prepare( "SELECT * FROM equipos WHERE id_equipo=?");
-        $sentencia->execute($id);
+        $sentencia->execute(array($id));
         $team = $sentencia->fetch(PDO::FETCH_OBJ);
         return $team;
     } 
@@ -34,7 +34,7 @@ class TeamModel{
         $sentencia->execute(array($nombre, $pais, $campeonatos));
     }
     function editTeam($id,$nombre,$pais,$campeonatos){
-        $sentencia=$this->db->prepare("UPDATE equipos SET nombreEquipo='$nombre', pais='$pais', campeonatos='$campeonatos',
+        $sentencia=$this->db->prepare("UPDATE equipos SET nombreEquipo='$nombre', pais='$pais', campeonatos='$campeonatos'
         WHERE id_equipo=?");
         $sentencia->execute(array($id));
     }

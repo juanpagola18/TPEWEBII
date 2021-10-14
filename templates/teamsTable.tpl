@@ -1,10 +1,10 @@
-<h1 class="">Equipos</h1>
+<h1 class="card text-center">Equipos</h1>
 
-<table class="">
+<table class="table">
     <thead>
-        <th>Equipo</th>
-        <th>Pais</th>
-        <th>Campeonatos Ganados</th>
+        <th scope="col">Equipo</th>
+        <th scope="col">Pais</th>
+        <th scope="col">Campeonatos Ganados</th>
         
 
     </thead>

@@ -42,36 +42,4 @@ class PlayerController{
     }
 
         
-/*    function createTask(){
-        if(!isset($_POST['done'])){
-            $done = 0;
-        }else{
-            $done = 1;
-        }
-
-        $this->model->insertTask($_POST['title'], $_POST['description'], $_POST['priority'], $done);
-        $this->view->showHomeLocation();
-    }
-
-    function deleteTask($id){
-        $this->authHelper->checkLoggedIn();
-
-        $this->model->deleteTaskFromDB($id);
-        $this->view->showHomeLocation();
-    }
-
-    function updateTask($id){
-        $this->authHelper->checkLoggedIn();
-
-        $this->model->updateTaskFromDB($id);
-        $this->view->showHomeLocation();
-    }
-    
-    function viewTask($id){
-        $this->authHelper->checkLoggedIn();
-
-        $task = $this->model->getTask($id);
-        $this->view->showTask($task);
-    }
-*/
 }

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2021 a las 20:27:44
+-- Tiempo de generación: 15-10-2021 a las 00:46:05
 -- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.7
+-- Versión de PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,7 @@ INSERT INTO `equipos` (`id_equipo`, `nombreEquipo`, `pais`, `campeonatos`) VALUE
 (2, 'River Plate', 'Argentina', 56),
 (4, 'San Lorenzo', 'Argentina', 22),
 (5, 'Boca Juniors', 'Argentina', 70),
-(7, 'Racing Club', 'Arg', 37);
+(8, 'Racing Club', 'Argentina', 37);
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,8 @@ INSERT INTO `usuarios` (`id_user`, `nick`, `usuario`, `contraseña`) VALUES
 (4, 'juanpagola', 'ee@ee', '$2y$10$3CWAhXikei9SxHOwcguYzuzTt4FnUoyxYOd5fabfwlc7N3Dv8dydS'),
 (5, 'agustin', 'agustin@gmail.com', '$2y$10$o0vy9NSbl46xxog1DRwQXuWnzRPumLXnrh.AsXoZZMVNA.4X7LmGC'),
 (6, 'agusti', 'agus@gmail.com', '$2y$10$t6I5MrRuH/HMRG.1Vih6BuKlASHG2mrGfFfst.j3lZRUUOYRgG0dK'),
-(7, 'juan', 'admin1@gmail.com', '$2y$10$kimqxXsCp/ICivKkFWrchu1q1RCszuXSMMnuqr/RyhHt1mvAQrFQS');
+(7, 'juan', 'admin1@gmail.com', '$2y$10$kimqxXsCp/ICivKkFWrchu1q1RCszuXSMMnuqr/RyhHt1mvAQrFQS'),
+(8, 'admin', 'boca@gmail.com', '$2y$10$Nqn5qk7hL8sThi80KwZZ9OX8mzuALE1xc.KW3qmTT6IDrSoTtwmKC');
 
 --
 -- Índices para tablas volcadas
@@ -126,7 +127,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
@@ -138,7 +139,7 @@ ALTER TABLE `jugadores`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas

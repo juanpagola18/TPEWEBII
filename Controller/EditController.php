@@ -71,7 +71,6 @@ class EditController{
         $this->redirectEditTeamMenu();
     }
     function editTeamMenu($id){
-
         $team = $this->teamModel->getTeam($id);
         $this->view->showEditTeam($team);
 

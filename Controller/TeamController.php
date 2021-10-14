@@ -17,8 +17,6 @@ class TeamController{
 
     function showTeams(){
 
-        //    $this->authHelper->checkLoggedIn();
-    
             $teams = $this->model->getTeams();
             $this->view->showTeams($teams);
         }

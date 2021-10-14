@@ -1,10 +1,10 @@
-<h1 class="">Equipos</h1>
+<h1 class="text-center">Equipos</h1>
 
-<table class="">
+<table class="table">
     <thead>
-        <th>Equipo</th>
-        <th>Pais</th>
-        <th>Campeonatos Ganados</th>
+        <th scope="row">Equipo</th>
+        <th scope="row">Pais</th>
+        <th scope="row">Campeonatos Ganados</th>
         
 
     </thead>
@@ -18,7 +18,7 @@
 </table>
 <div class="">
         <form action="editTeam/{$team->id_equipo}" method=POST>
-            <h2>Agregar Equipo</h2>
+            <h2>Editar Equipo</h2>
             <label>Nombre del Equipo</label>
             <input name="newTeamName" type="text" placeholder="Nombre equipo..." required>
             <label>Pais</label>
@@ -26,6 +26,6 @@
             <label>Campeonatos Ganados</label>
             <input name="newChampionships" type="number" placeholder="Campeonatos..." required>
 
-            <button>CARGAR EQUIPO</button>        
+            <button class="btn btn-secondary">MODIFICAR EQUIPO</button>        
         </form>   
     </div>

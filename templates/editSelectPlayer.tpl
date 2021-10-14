@@ -1,12 +1,12 @@
-<h1 class="">Editar Jugadores</h1>
+<h1 class="text-center">Editar Jugadores</h1>
     
 
-<table class="">
+<table class="table">
     <thead>
-        <th>Nombre</th>
-        <th>Partidos Jugados</th>
-        <th>Goles</th>
-        <th>Nombre Equipo</th>
+        <th scope="row">Nombre</th>
+        <th scope="row">Partidos Jugados</th>
+        <th scope="row">Goles</th>
+        <th scope="row">Nombre Equipo</th>
 
 
     </thead>
@@ -37,6 +37,6 @@
                 </select>
                 
 
-                <button>EDITAR</button>        
+                <button class="btn btn-secondary">EDITAR JUGADOR</button>        
             </form>   
         </div>

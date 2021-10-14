@@ -1,26 +1,26 @@
-<h1 class="">Jugadores</h1>
-<div class="">
+<h1 class="text-center">Jugadores</h1>
+<div class=>
 
-    <form action="selectEquipos" method=POST>
+    <form class="mb-3" action="selectEquipos" method=POST>
     
-        <select name= "equipo">
+        <select class="form-control" name= "equipo">
             {foreach from=$teams item=team}
                 <option value='{$team->id_equipo}'>{$team->nombreEquipo}</option>
             {/foreach}
         </select>
-        <button type="submit"> Ver categoria seleccionada</button>
-        <button><a href='players'>Ver todos </a></button>
+        <button class="btn btn-primary" type="submit"> Ver categoria seleccionada</button>
+        <button class="btn btn-light" ><a class="btn btn-dark" href='players'>Ver todos </a></button>
     </form>
-</div>
+</div>  
     
 
-<table class="">
+<table class="table">
     <thead>
-        <th>Nombre</th>
-        <th>Partidos Jugados</th>
-        <th>Goles</th>
-        <th>Nombre Equipo</th>
-        <th>Detalle</th>
+        <th scope="row">Nombre</th>
+        <th scope="row">Partidos Jugados</th>
+        <th scope="row">Goles</th>
+        <th scope="row">Nombre Equipo</th>
+        <th scope="row">Detalle</th>
 
     </thead>
     <tbody>
@@ -30,7 +30,7 @@
             <td>{$player->partidosJugados}</td>
             <td>{$player->goles}</td>
             <td>{$player->nombreEquipo}</td>
-            <td><a href="showPlayer/{$player->id}">Ver mas</a></td>
+            <td><a class="btn btn-warning" href="showPlayer/{$player->id}">Ver mas</a></td>
         </tr> 
         {/foreach}
         

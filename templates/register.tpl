@@ -8,8 +8,7 @@
             <input type="email" name="input_user" placeholder="bocajuniors@gmail.com.ar">
             <label for="password">Contraseña (*)</label>
             <input type="password" name="input_password">
-            <div> 
-            {* {$mensaje} *}   
+            <div>  
             </div>
             <input type="submit" class="boton" value="Registrarme">
         </form>      
