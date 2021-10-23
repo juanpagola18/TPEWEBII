@@ -66,7 +66,7 @@ switch ($params[0]) {
         $editController->deleteTeam($params[1]);
         break;
     case 'addPlayer':
-        $editController->addPlayer($_POST['name'],$_POST['playedGames'],$_POST['score'],$_POST['team']);
+        $editController->addPlayer();
         break;
     case 'addTeam':
         $editController->addTeam($_POST['teamName'],$_POST['country'],$_POST['championships']);

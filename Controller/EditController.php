@@ -51,8 +51,11 @@ class EditController{
         $this->teamModel->deleteTeam($id);
         $this->redirectEditTeamMenu();
     }
-    function addPlayer($name, $playedGames, $score, $team){
-        $this->model->createPlayer($name, $playedGames, $score, $team);
+    function addPlayer(){
+        if(!empty($_POST)){
+        $this->model->createPlayer($_POST['name'],$_POST['playedGames'],$_POST['score'],$_POST['team']);
+        }
+        
         $this->redirectEditPlayerMenu();
     }
     function editPlayerMenu($id){
