@@ -1,3 +1,4 @@
+{include file="templates/header.tpl"}
 <h1 class="text-center">Editar Jugadores</h1>
     
 
@@ -40,3 +41,4 @@
                 <button class="btn btn-secondary">EDITAR JUGADOR</button>        
             </form>   
         </div>
+{include file="templates/footer.tpl"}

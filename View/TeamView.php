@@ -9,12 +9,14 @@ class TeamView{
     }
 
     function showTeams($teams){
-  
-        $this->smarty->display('templates/header.tpl');        
+       
         $this->smarty->assign('teams', $teams);
         $this->smarty->display('templates/teamsTable.tpl');
-        $this->smarty->display('templates/footer.tpl');
     }
-    
+    function showTeam($team){
+        $this->smarty->assign('team', $team);
+        $this->smarty->display('templates/editSelectTeam.tpl');
+    }
+ 
    
 }

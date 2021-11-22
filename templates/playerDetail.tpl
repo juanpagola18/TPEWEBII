@@ -1,3 +1,4 @@
+{include file="templates/header.tpl"}
 <div class="">
     <button><a href='players'>Volver</a></button>
     <div class="">
@@ -9,3 +10,4 @@
         </ul>
     </div>
 </div>
+{include file="templates/footer.tpl"}

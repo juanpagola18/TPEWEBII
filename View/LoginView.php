@@ -23,11 +23,14 @@ class LoginView{
     }
     
     function showRegister($error = ""){
-        $this->smarty->display('templates/header.tpl');
         $this->smarty->assign('titulo', 'Log In');   
         $this->smarty->assign('error', $error);      
         $this->smarty->display('templates/register.tpl');
-        $this->smarty->display('templates/footer.tpl');
     }
+    function showUsuarios($listaUsuarios) {
+        $this->smarty->assign('usuarios','usuarios');
+        $this->smarty->assign('listaUsuarios',$listaUsuarios);
+        $this->smarty->display('templates/usuarios.tpl');
+    }  
 
 }

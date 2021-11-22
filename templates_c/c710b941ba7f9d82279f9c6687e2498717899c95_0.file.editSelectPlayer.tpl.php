@@ -1,27 +1,31 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 00:39:01
+/* Smarty version 3.1.39, created on 2021-11-22 16:09:38
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\templates\editSelectPlayer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168b185590958_27187534',
+  'unifunc' => 'content_619bb2b2c99f12_65569991',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c710b941ba7f9d82279f9c6687e2498717899c95' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\templates\\editSelectPlayer.tpl',
-      1 => 1634251049,
+      1 => 1637593503,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:templates/header.tpl' => 1,
+    'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168b185590958_27187534 (Smarty_Internal_Template $_smarty_tpl) {
-?><h1 class="text-center">Editar Jugadores</h1>
+function content_619bb2b2c99f12_65569991 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+<h1 class="text-center">Editar Jugadores</h1>
     
 
 <table class="table">
@@ -76,5 +80,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                 <button class="btn btn-secondary">EDITAR JUGADOR</button>        
             </form>   
-        </div><?php }
+        </div>
+<?php $_smarty_tpl->_subTemplateRender("file:templates/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

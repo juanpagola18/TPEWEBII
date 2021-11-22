@@ -10,8 +10,6 @@ class HomeView{
 
     function showHome($usser =""){
         $this->smarty->assign('usser', $usser);  
-        $this->smarty->display('templates/header.tpl');  
         $this->smarty->display('templates/home.tpl');
-        $this->smarty->display('templates/footer.tpl');
     }
 }

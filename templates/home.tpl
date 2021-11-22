@@ -1,3 +1,4 @@
+        {include file="templates/header.tpl"}
     <div class="card">
         
         <h1 class="card-title text-center">Futbol Argentino</h1>
@@ -11,3 +12,4 @@
         </p>
         <img src="./images/cancha.jpg" class="img-thumbnail" alt="bombonera">
     </div>
+        {include file="templates/footer.tpl"}

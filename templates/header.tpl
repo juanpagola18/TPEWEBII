@@ -15,12 +15,33 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             
-                <a class="navbar-brand" href="home">INICIO</a>
+                 <a class="navbar-brand" href="home">INICIO</a>
+            
+          
                 <a class="navbar-brand" href="teams">EQUIPOS</a>
+          
+            
                 <a class="navbar-brand" href="players">JUGADORES</a>
+            
+            {if empty($smarty.session.usuario)}
+          
                 <a class="navbar-brand" href="loginForm">REGISTRO</a>
-                <a class="navbar-brand" href="adminPlayer">EDITAR JUGADORES</a>
-                <a class="navbar-brand" href="adminTeam">EDITAR EQUIPOS</a>
+         
+            {else}
+            
+                <a class="navbar-brand" href="logout">CERRAR SESION</a>
+          
+            
+            {if ($smarty.session.rol == 1)}
+             
+                 <a class="navbar-brand" href="usuarios">USUARIOS</a>
+            {/if} 
+                <a class="navbar-brand"> {$smarty.session.usuario} </a>
+
+            
+            
+            {/if}
+
             
         </div>    
     </nav>

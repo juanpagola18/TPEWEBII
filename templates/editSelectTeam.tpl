@@ -1,3 +1,4 @@
+{include file="templates/header.tpl"}
 <h1 class="text-center">Equipos</h1>
 
 <table class="table">
@@ -29,3 +30,4 @@
             <button class="btn btn-secondary">MODIFICAR EQUIPO</button>        
         </form>   
     </div>
+    {include file="templates/footer.tpl"}

@@ -1,4 +1,5 @@
-    <main class="main-contacto login">
+{include file="templates/header.tpl"}   
+<main class="main-contacto login">
         <h1>Registro de usuario</h1>
         <p>Los campos con (*) son obligatorios</p>
         <form action="registerUser" method="POST" class="formulario">
@@ -12,4 +13,5 @@
             </div>
             <input type="submit" class="boton" value="Registrarme">
         </form>      
-    </main>
+</main>
+    {include file="templates/footer.tpl"}

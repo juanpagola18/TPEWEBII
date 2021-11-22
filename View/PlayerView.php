@@ -6,25 +6,27 @@ class PlayerView {
 
     function __construct() {
         $this->smarty = new Smarty();
+        $authHelper = new AuthHelper();
+        $userLogged = $authHelper->getLoggedUser();
+        $this->getSmarty()->assign('userLogged', $userLogged);
     }
-
+    public function getSmarty() {
+        return $this->smarty;        
+    }
     function selectEquipos($teams){
         $this->smarty->assign('teams', $teams);
     }
 
-    function showPlayers($players){
-        $this->smarty->display('templates/header.tpl');        
+    function showPlayers($players){    
         $this->smarty->assign('players', $players);
         $this->smarty->display('templates/playerTable.tpl');
-        $this->smarty->display('templates/footer.tpl');
     }
 
     function showPlayer($player){
         
-        $this->smarty->display('templates/header.tpl'); 
         $this->smarty->assign('player', $player);
         $this->smarty->display('templates/playerDetail.tpl');
-        $this->smarty->display('templates/footer.tpl');
+
      }
 
     function showHomeLocation(){
@@ -36,10 +38,14 @@ class PlayerView {
     }
 
     function showEdit($players){
-        $this->smarty->display('templates/header.tpl');        
+      
         $this->smarty->assign('players', $players);
         $this->smarty->display('templates/editPlayers.tpl');
-        $this->smarty->display('templates/footer.tpl');
+
     }   
+    function showEditPlayer($player){
+        $this->smarty->assign('player', $player);
+        $this->smarty->display('templates/editSelectPlayer.tpl');
+    }
     
 }
