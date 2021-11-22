@@ -22,9 +22,9 @@
                         <td>{"Usuario"}</td>
                         {/if}
                         {if {$user->rol}==1}
-                        <td><button onclick="location.href='altaAdmin/{$user->id_user}'">Quitar Admin</button></td>
+                        <td><button onclick="location.href='bajaAdmin/{$user->id_user}'">Quitar Admin</button></td>
                         {else}
-                        <td><button onclick="location.href='bajaAdmin/{$user->id_user}'">Hacer Admin</button></td>
+                        <td><button onclick="location.href='altaAdmin/{$user->id_user}'">Hacer Admin</button></td>
                         {/if}
                         <td><button onclick="location.href='removeUser/{$user->id_user}'">ELIMINAR</button></td>
                         </tr>
