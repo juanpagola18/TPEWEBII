@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2021 a las 01:34:20
+-- Tiempo de generación: 23-11-2021 a las 19:52:05
 -- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Versión de PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comment`
+-- Estructura de tabla para la tabla `comments`
 --
 
-CREATE TABLE `comment` (
+CREATE TABLE `comments` (
   `id_comment` int(11) NOT NULL,
   `comment` varchar(1000) NOT NULL,
   `punctuation` int(10) NOT NULL,
@@ -35,6 +35,16 @@ CREATE TABLE `comment` (
   `id_player` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comments`
+--
+
+INSERT INTO `comments` (`id_comment`, `comment`, `punctuation`, `id_user`, `id_player`, `date`) VALUES
+(1, 'que jugador!', 5, 16, 26, '2021-11-23 15:40:09'),
+(3, 'que jugadorazo', 5, 16, 23, '2021-11-23 16:34:42'),
+(4, 'que jugadorazo', 5, 16, 23, '2021-11-23 16:34:46'),
+(11, 'que jugador', 5, 16, 23, '2021-11-23 18:33:14');
 
 -- --------------------------------------------------------
 
@@ -110,9 +120,9 @@ INSERT INTO `usuarios` (`id_user`, `nick`, `usuario`, `contraseña`, `rol`) VALU
 --
 
 --
--- Indices de la tabla `comment`
+-- Indices de la tabla `comments`
 --
-ALTER TABLE `comment`
+ALTER TABLE `comments`
   ADD PRIMARY KEY (`id_comment`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `id_player` (`id_player`);
@@ -141,10 +151,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `comment`
+-- AUTO_INCREMENT de la tabla `comments`
 --
-ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `comments`
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
@@ -169,9 +179,9 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Filtros para la tabla `comment`
+-- Filtros para la tabla `comments`
 --
-ALTER TABLE `comment`
+ALTER TABLE `comments`
   ADD CONSTRAINT `id_player` FOREIGN KEY (`id_player`) REFERENCES `jugadores` (`id`),
   ADD CONSTRAINT `id_user` FOREIGN KEY (`id_user`) REFERENCES `usuarios` (`id_user`);
 
