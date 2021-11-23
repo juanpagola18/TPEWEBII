@@ -1,27 +1,31 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 00:38:59
+/* Smarty version 3.1.39, created on 2021-11-23 21:26:13
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\templates\editSelectTeam.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168b1835a1e65_11403613',
+  'unifunc' => 'content_619d4e65f10a55_05108382',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c953ca04aad1de9e712c66c1b9f9764ec80b452c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\templates\\editSelectTeam.tpl',
-      1 => 1634251042,
+      1 => 1637698273,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:templates/header.tpl' => 1,
+    'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168b1835a1e65_11403613 (Smarty_Internal_Template $_smarty_tpl) {
-?><h1 class="text-center">Equipos</h1>
+function content_619d4e65f10a55_05108382 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+<h1 class="text-center">Equipos</h1>
 
 <table class="table">
     <thead>
@@ -55,5 +59,7 @@ function content_6168b1835a1e65_11403613 (Smarty_Internal_Template $_smarty_tpl)
 
             <button class="btn btn-secondary">MODIFICAR EQUIPO</button>        
         </form>   
-    </div><?php }
+    </div>
+    <?php $_smarty_tpl->_subTemplateRender("file:templates/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }
