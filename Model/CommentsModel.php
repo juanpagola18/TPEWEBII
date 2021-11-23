@@ -28,7 +28,7 @@ class CommentModel {
     //@param $id
     //@return mixed
     //Retorna todos los comentarios sobre un producto en especifico
-    function getProductComments($id){
+    function getComments($id){
         $query = $this->db->prepare('SELECT comentarios.*, usuarios.usuario FROM comentarios JOIN usuarios ON comentarios.id_fk_usuario = usuarios.ID_usuario WHERE id_fk_producto = ?');
         $query->execute([$id]);
         return $query->fetchAll(PDO::FETCH_OBJ);

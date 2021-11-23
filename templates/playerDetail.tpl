@@ -1,12 +1,12 @@
 {include file="templates/header.tpl"}
-<div class="">
-    <button><a href='players'>Volver</a></button>
-    <div class="">
-        <ul>
-            <li>Nombre: {$player->nombre}</li>
-            <li>Partidos Jugados: {$player->partidosJugados}</li>
-            <li>Goles: {$player->goles}</li>
-            <li>Equipo: {$player->nombreEquipo}</li>
+<div class="container">
+    <button><a class="btn btn-primary" href='players'>Volver</a></button>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {$player->nombre}</li>
+            <li class="list-group-item">Partidos Jugados: {$player->partidosJugados}</li>
+            <li class="list-group-item">Goles: {$player->goles}</li>
+            <li class="list-group-item">Equipo: {$player->nombreEquipo}</li>
         </ul>
     </div>
 </div>

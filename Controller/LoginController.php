@@ -89,6 +89,7 @@ class LoginController {
 
     function altaAdmin($id)
     {
+        $this->authHelper->checkLoggedIn();
         if (AuthHelper::isAdmin()) {
             $this->model->altaAdmin($id);
             header("Location: " . BASE_URL . 'usuarios');
@@ -97,6 +98,7 @@ class LoginController {
     }
     function bajaAdmin($id)
     {
+        $this->authHelper->checkLoggedIn();
         if (AuthHelper::isAdmin()) {
             $this->model->bajaAdmin($id);
             header("Location: " . BASE_URL . 'usuarios');

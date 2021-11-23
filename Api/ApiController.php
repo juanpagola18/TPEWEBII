@@ -2,7 +2,7 @@
 require_once './Model/CommentsModel.php';
 include_once('./Model/UserModel.php');
 include_once "./Helpers/AuthHelper.php";
-require_once './View/ApiView.php';
+require_once './Api/ApiView.php';
 
 class LoginController {
 
@@ -10,7 +10,7 @@ class LoginController {
     private $view;
 
     function __construct(){
-        $this->model = new ApiModel();
+        $this->model = new CommentModel();
         $this->view = new ApiView();
         $this->authHelper = new AuthHelper();
     }
