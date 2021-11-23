@@ -1,4 +1,10 @@
-function getProductComments() {
+function getProductID() {
+    let urlParts = window.location.href.split('/');
+    return parseInt(urlParts[urlParts.length - 1]);
+}
+
+
+function getComments() {
     //Inicio de mi lista de comentarios
     listComments.error = false;
     listComments.loading = true;
@@ -20,19 +26,19 @@ function getProductComments() {
         if (productComments == null)
         {
             // Hubo un error
-            listaComentarios.error = true;
+            listComments.error = true;
         }
         else{
-            if (productComments == "Sin comentarios") {
+            if (productComments == "No existen comentarios") {
             listaComentarios.notComment=true;
             }
             else {
                 // Obtengo todos los comentarios de un producto y lo guardo en la lista de comentarios
-                listaComentarios.productComments = productComments;
+                listComments.productComments = productComments;
             }
         }
         // Termina la carga de informacion
-        listaComentarios.loading = false;
+        listComments.loading = false;
         
     })
     .catch(exception => console.log(exception));

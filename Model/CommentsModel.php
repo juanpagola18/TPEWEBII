@@ -1,8 +1,7 @@
 <?php
 
-require_once('Model.php');
 
-class CommentModel {
+class CommentsModel {
     private $db;
     function __construct(){
          $this->db = new PDO('mysql:host=localhost;'.'dbname=db_jugadores;charset=utf8', 'root', '');
@@ -10,44 +9,45 @@ class CommentModel {
     
     //@return array
     //Retorna todos los comentarios en la tabla comentario ordenados por id_comentario
-    function getAll() {
-        $query = $this->db->prepare('SELECT * FROM comentarios ORDER BY id_comentario ASC');
+    function getComments() {
+        $query = $this->db->prepare('SELECT * FROM comments');
         $query->execute();
+        $comments = $query->fetchAll(PDO::FETCH_OBJ);
+        return $comments;
+
+    }
+    function getPlayerComments($id)
+    {
+        $query = $this->db->prepare('SELECT * FROM comments INNER JOIN usuarios ON comments.id_user = usuarios.id_user WHERE id_player=?');
+        $query->execute(array($id));
+
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
     
-    //@param $id
-    //@return mixed
-    //Retorna una tupla a partir de un id pasado por parámtro
-    function getComment($id){
-        $query = $this->db->prepare('SELECT * FROM comentarios WHERE id_comentario = ?');
-        $query->execute([$id]);
-        return $query->fetch(PDO::FETCH_OBJ);
-    }
+    function insertComment($comment, $punctuation, $id_user, $id_player){
+        $agregar = 'INSERT INTO comments ( comment, punctuation, id_user, id_player) VALUES ( ?,?,?,?);';
+        $query = $this->db->prepare($agregar);
+        $query->execute(array($comment, $punctuation, $id_user, $id_player));
 
-    //@param $id
-    //@return mixed
-    //Retorna todos los comentarios sobre un producto en especifico
-    function getComments($id){
-        $query = $this->db->prepare('SELECT comentarios.*, usuarios.usuario FROM comentarios JOIN usuarios ON comentarios.id_fk_usuario = usuarios.ID_usuario WHERE id_fk_producto = ?');
-        $query->execute([$id]);
+        $ultimoId = $this->db->lastInsertId();
+
+        return  $ultimoId;
+    }
+    function deleteComment($id)
+    {
+        $query = $this->db->prepare('DELETE FROM comments WHERE id_comment=?');
+        $query->execute(array($id));
+
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    function getComment($id){
+        $query = $this->db->prepare('SELECT * FROM comments  WHERE id_comment=?');
+        $query->execute(array($id));
 
-
-    //@param "$producto, $usuario, $calificacion, $texto"
-    //Crea un comentario a partir del valor de los parámetros
-    function newProductComment($producto, $usuario, $calificacion, $texto) {
-        $query = $this->db->prepare('INSERT INTO comentarios(id_fk_producto, id_fk_usuario, calificacion, comentario) VALUES(?, ?, ?, ?)');
-        $success = $query->execute([$producto, $usuario, $calificacion, $texto]);
-        return $success;
+        return $query->fetch(PDO::FETCH_OBJ);
     }
-
-    //@param $id
-    //Elimina un comentario en base al id pasado por parámetro
-    function deleteComment($id) {
-        $query = $this->db->prepare('DELETE FROM comentarios WHERE id_comentario = ?');
-        $success = $query->execute([$id]);
-        return $success;
+    function updateComment($id, $comment , $punctuation, $id_user, $id_player){
+        $sentencia = $this->db->prepare("UPDATE comments SET comment=?, punctuation=?, id_user=?, id_player=? WHERE id_comment=?");
+        $sentencia->execute(array($comment , $punctuation, $id_user, $id_player, $id));
     }
 }

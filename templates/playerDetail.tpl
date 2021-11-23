@@ -9,5 +9,10 @@
             <li class="list-group-item">Equipo: {$player->nombreEquipo}</li>
         </ul>
     </div>
+    {if ($smarty.session)}
+      <section id = seccionComentario}>
+            {include 'templates/vue/comments.vue'}
+    {/if}
 </div>
+
 {include file="templates/footer.tpl"}
