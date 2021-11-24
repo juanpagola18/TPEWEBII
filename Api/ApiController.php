@@ -4,6 +4,7 @@ require_once './Model/UserModel.php';
 include_once "./Helpers/AuthHelper.php";
 require_once './api/ApiView.php';
 
+aa;
 class ApiController {
 
     private $model;
