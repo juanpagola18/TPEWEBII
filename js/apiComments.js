@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
     async function mostrar(event){
         let btn = 0;
             //event.preventDefault();
-            let id_comment = document.querySelector("#input_id_comment").value;
+            let id_comentario = document.querySelector("#input_id_comment").value;
             listaComentarios.innerHTML = "";
             
             
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
          
             try {
                 
-                let response = await fetch(`${url}/${id_comment}`, {
+                let response = await fetch(`${url}/${id_comentario}`, {
                     method: "GET",
                 });
                 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(){
                    let comentario = `<td class="">${comment.comment}</td>`;
                    let puntuacion = `<td> ${comment.punctuation}</td>`;
                    let usuario = `<td> ${comment.id_user}</td>`;
-                   let btnBorrar = `<td class="creado"><button class="btnBorrar" data-id=${id_comment}>Borrar</button></td>`;
+                   let btnBorrar = `<td class="creado"><button class="btnBorrar" data-id=${comment.id_comment}>Borrar</button></td>`;
                         
              listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + btnBorrar}</tr>`;
          
@@ -44,7 +44,16 @@ document.addEventListener("DOMContentLoaded", function(){
             };
             
         }
+        document.querySelectorAll(".btnBorrar").forEach((boton)=>{
+            boton.addEventListener('click', function (){
+                let id = (this.dataset.id);
+                borrar(id);
+            });
+        });
+
+        
         mostrar();
+
 })
 
 
