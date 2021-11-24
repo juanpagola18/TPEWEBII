@@ -26,17 +26,6 @@
             </tbody>
       </table>
       {if ($smarty.session)}
-        <button class="btn btn-warning" id="filtrarComment"> Filtrar por puntaje</button>
-        <select class="filtrarValor">
-                <option value="1">1 - Mediocre</option>
-                <option value="2">2 - Jugador malo</option>
-                <option value="3">3 - Jugador promedio</option>
-                <option value="4">4 - Buen jugador</option>
-                <option value="5">5 - Jugador destacado</option>
-        </select>
-      <button class="btn btn-dark" id="mostrarTodos"> Mostrar todos</button>
-      
-    
      <div clas="enviarComentario">
         <h1>Agregue su comentario</h1>
             <select id="valuacion" aria-label="Default select example">

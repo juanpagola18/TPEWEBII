@@ -5,23 +5,24 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let listaComentarios = document.querySelector('#comments-list');
     let btnAgregarComment = document.querySelector('#cargarComment');
-    let btnFiltrarComment = document.querySelector('#filtrarComment');
-    let btnMostrarTodos = document.querySelector('#mostrarTodos');
+
     
     
     async function mostrar(){
         
             
-            let comentario = document.querySelector("#input_id_comment").value;
+            let comentario = document.querySelector("#input_id_comment");
             listaComentarios.innerHTML = "";
             
             
             let id_user = document.querySelector("#id_admin").value;
-            
+            if (id_user != 2){
+                btnAgregarComment.addEventListener("click", cargarComentario); 
+            }
          
             try {
                 
-                let response = await fetch(`${url}/${comentario}`, {
+                let response = await fetch(`${url}/${comentario.value}`, {
                     method: "GET",
                 });
                 
@@ -37,22 +38,21 @@ document.addEventListener("DOMContentLoaded", function(){
                    let usuario = `<td> ${comment.nick}</td>`;
                    let fecha = `<td> ${comment.date}</td>`;
                    let btnBorrar = `<td class="creado"><button class="btnBorrar btn btn-danger" data-id=${comment.id_comment}>Borrar</button></td>`;
-            if (id_user === 1){
-                     
+            if (id_user == 1){
+                  
              listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + fecha + btnBorrar}</tr>`;
              btnAgregarComment.addEventListener("click", cargarComentario);
-             btnFiltrarComment.addEventListener("click", filtrarComentario);   
-             btnMostrarTodos.addEventListener("click", mostrarTodos);
+
             }
             else if (id_user ==  2) {
                 listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + fecha}</tr>`;
                 
+
             }
             else {
                 listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + fecha}</tr>`;
                 btnAgregarComment.addEventListener("click", cargarComentario);
-                btnFiltrarComment.addEventListener("click", filtrarComentario);  
-                btnMostrarTodos.addEventListener("click", mostrarTodos);
+
             }
                 }
                 obtener_id_botones();
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function(){
             
         }
         
-        mostrar();
+        
         function obtener_id_botones() {
             let botones_eliminar = document.querySelectorAll(".btnBorrar");
             
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     }
                     return r.json;
                 })
-                .then(function (datos) {
+                .then(function () {
                     console.log("El comentario fue borrado exitosamente");
                     mostrar();
                 })
@@ -151,47 +151,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 alert("Inicia sesion para poder comentar");
             }
         }
-        async function filtrarComentario(){
-            let valorFiltrar= document.querySelector(".filtrarValor");
-            
-            let comentario = document.querySelector("#input_id_comment").value;
-            listaComentarios.innerHTML = "";
-          
-            
-            
-         
-            try {
-                
-                let response = await fetch(`${url}/${comentario}`, {
-                    method: "GET",
-                });
-                
-                if (response.status===200){
 
-                    let comments = await response.json();
-                    
-                    for (const comment of comments ){
-                    
-                   
-                   let comentario = `<td class="">${comment.comment}</td>`;
-                   let puntuacion = `<td> ${comment.punctuation}</td>`;
-                   let usuario = `<td> ${comment.nick}</td>`;
-                   let fecha = `<td> ${comment.date}</td>`;
-                   
-                   if (comment.punctuation == valorFiltrar.value){    
-                    listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + fecha }</tr>`;
-                   } 
-                  
-                }
-            }
-        }
-        catch (error) {
-            listaComentarios.innerHTML = error;
-        };
-    }
-    function mostrarTodos(){
-        mostrar();
-    }
+    mostrar();
     });
 
 

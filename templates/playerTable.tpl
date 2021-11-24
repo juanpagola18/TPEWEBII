@@ -36,6 +36,7 @@
             <td>{$player->partidosJugados}</td>
             <td>{$player->goles}</td>
             <td>{$player->nombreEquipo}</td>
+            <input id="input_id_comment" type="hidden" value="{$player->id}">
             <td><a class="btn btn-warning" href="showPlayer/{$player->id}">Ver mas</a></td>
             {if ($smarty.session)}
             <td><a class="btn btn-danger" href="deletePlayer/{$player->id}">Borrar</a></td>

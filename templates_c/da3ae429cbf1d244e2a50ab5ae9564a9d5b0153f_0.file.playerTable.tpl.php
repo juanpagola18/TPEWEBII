@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-22 21:31:56
+/* Smarty version 3.1.39, created on 2021-11-24 21:43:01
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\templates\playerTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619bfe3cba6821_92923880',
+  'unifunc' => 'content_619ea3d57efc05_25185401',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'da3ae429cbf1d244e2a50ab5ae9564a9d5b0153f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\templates\\playerTable.tpl',
-      1 => 1637613115,
+      1 => 1637786571,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_619bfe3cba6821_92923880 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ea3d57efc05_25185401 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <h1 class="text-center">Jugadores</h1>
@@ -80,6 +80,8 @@ $_smarty_tpl->tpl_vars['player']->do_else = false;
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['player']->value->nombreEquipo;?>
 </td>
+            <input id="input_id_comment" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['player']->value->id;?>
+">
             <td><a class="btn btn-warning" href="showPlayer/<?php echo $_smarty_tpl->tpl_vars['player']->value->id;?>
 ">Ver mas</a></td>
             <?php if (($_SESSION)) {?>

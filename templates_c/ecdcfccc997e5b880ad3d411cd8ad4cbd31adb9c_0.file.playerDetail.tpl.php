@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 10:08:14
+/* Smarty version 3.1.39, created on 2021-11-24 23:35:44
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\templates\playerDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619e00fe7958e7_86606137',
+  'unifunc' => 'content_619ebe40df0f71_47345797',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ecdcfccc997e5b880ad3d411cd8ad4cbd31adb9c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\templates\\playerDetail.tpl',
-      1 => 1637744887,
+      1 => 1637793292,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_619e00fe7958e7_86606137 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ebe40df0f71_47345797 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -42,22 +42,41 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
             
         </ul>
     </div>
-    <?php if (($_SESSION)) {?>
+    
       <section id = seccionComentario}>
-      <table >
+      <table class="table">
       <thead>
-                <th>Comentario</th>
-                <th>Puntaje</th>
-                <th>Usuario</th>
+                <th  scope="row">Comentario</th>
+                <th  scope="row">Puntaje</th>
+                <th scope="row">Usuario</th>
+                <th scope="row">Fecha</th>
             </thead>
 
             <tbody id="comments-list">
                     
             </tbody>
       </table>
-      
-      </section>
+      <?php if (($_SESSION)) {?>
+     <div clas="enviarComentario">
+        <h1>Agregue su comentario</h1>
+            <select id="valuacion" aria-label="Default select example">
+                <option selected>Como puntuaria al jugador?</option>
+                <option value="1">1 - Mediocre</option>
+                <option value="2">2 - Jugador malo</option>
+                <option value="3">3 - Jugador promedio</option>
+                <option value="4">4 - Buen jugador</option>
+                <option value="5">5 - Jugador destacado</option>
+            </select>
+        <div class="mb-3">
+            <label for="comentario" class="form-label">Su comentario</label>
+            <input type="email" class="form-control" id="comentario" placeholder="Escriba su comentario">
+        </div>
+        <button class="btn btn-dark" id="cargarComment">Enviar Comentario </button>
+    <div>    
+     
+
     <?php }?>
+     </section>
 </div>
 <?php echo '<script'; ?>
  type="text/javascript" src="js/apiComments.js"><?php echo '</script'; ?>

@@ -17,9 +17,10 @@ class PlayerModel{
         $sentencia = $this->db->prepare( "SELECT a.*, b.* FROM jugadores a LEFT JOIN equipos b ON a.id_equipo=b.id_equipo 
         WHERE id=?");
         $sentencia->execute(array($id));
+        $cantidadPlayers = $sentencia->rowCount();
         $player = $sentencia->fetch(PDO::FETCH_OBJ);
         return $player;
-
+        return $cantidadPlayers;
     }
     function getPlayersByTeam($id){
         $sentencia = $this->db->prepare( "SELECT a.*, b.* FROM jugadores a LEFT JOIN equipos b ON
