@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-23 11:44:13
+/* Smarty version 3.1.39, created on 2021-11-24 15:10:20
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\TPEWEBII\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619cc5fd4efd70_91125429',
+  'unifunc' => 'content_619e47ccb82115_86236263',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11f0f7b967c118811240c97f7c3e642675473f1d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\TPEWEBII\\templates\\header.tpl',
-      1 => 1637664248,
+      1 => 1637763015,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_619cc5fd4efd70_91125429 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619e47ccb82115_86236263 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,12 +50,15 @@ function content_619cc5fd4efd70_91125429 (Smarty_Internal_Template $_smarty_tpl)
             <?php if (empty($_SESSION['usuario'])) {?>
           
                 <a class="navbar-brand" href="loginForm">REGISTRO</a>
+               
          
             <?php } else { ?>
-            
+               
                 <a class="navbar-brand" href="logout">CERRAR SESION</a>
-          
-            
+               <input id="id_admin" type="hidden" value="<?php echo $_SESSION['rol'];?>
+">
+               <input id="id_session" type="hidden" value="<?php echo $_SESSION['id'];?>
+">
             <?php if (($_SESSION['rol'] == 1)) {?>
              
                  <a class="navbar-brand" href="usuarios">USUARIOS</a>

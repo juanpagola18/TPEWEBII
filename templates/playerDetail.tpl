@@ -11,13 +11,13 @@
             
         </ul>
     </div>
-    {if ($smarty.session)}
+   
       <section id = seccionComentario}>
-      <table >
+      <table class="table">
       <thead>
-                <th>Comentario</th>
-                <th>Puntaje</th>
-                <th>Usuario</th>
+                <th  scope="row">Comentario</th>
+                <th  scope="row">Puntaje</th>
+                <th scope="row">Usuario</th>
             </thead>
 
             <tbody id="comments-list">
@@ -25,8 +25,27 @@
             </tbody>
       </table>
       
-      </section>
+    {if ($smarty.session)}
+     <div clas="enviarComentario">
+        <h1>Agregue su comentario</h1>
+            <select id="valuacion" aria-label="Default select example">
+                <option selected>Como puntuaria al jugador?</option>
+                <option value="1">1 - Mediocre</option>
+                <option value="2">2 - Jugador malo</option>
+                <option value="3">3 - Jugador promedio</option>
+                <option value="4">4 - Buen jugador</option>
+                <option value="5">5 - Jugador destacado</option>
+            </select>
+        <div class="mb-3">
+            <label for="comentario" class="form-label">Su comentario</label>
+            <input type="email" class="form-control" id="comentario" placeholder="Escriba su comentario">
+        </div>
+        <button class="btn btn-dark" id="cargarComment">Enviar Comentario </a>
+    <div>    
+     
+
     {/if}
+     </section>
 </div>
 <script type="text/javascript" src="js/apiComments.js"></script> 
 {include file="templates/footer.tpl"}

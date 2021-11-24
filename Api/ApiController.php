@@ -36,12 +36,12 @@ function getPlayerComments($params = null){
     if ($comment) {
         $this->view->response($comment, 200);
     } else {
-        $this->view->response("No se encontraron comentarios para este peleador", 404);
+        $this->view->response("No se encontraron comentarios para este jugador", 404);
     }
 }
 
 function insertComment(){
-    $this->authHelper->checkLoggedIn();
+    //$this->authHelper->checkLoggedIn();
 
     $data = $this->getBody();
 

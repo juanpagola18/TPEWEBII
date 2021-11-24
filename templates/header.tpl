@@ -26,12 +26,13 @@
             {if empty($smarty.session.usuario)}
           
                 <a class="navbar-brand" href="loginForm">REGISTRO</a>
+               
          
             {else}
-            
+               
                 <a class="navbar-brand" href="logout">CERRAR SESION</a>
-          
-            
+               <input id="id_admin" type="hidden" value="{$smarty.session.rol}">
+               <input id="id_session" type="hidden" value="{$smarty.session.id}">
             {if ($smarty.session.rol == 1)}
              
                  <a class="navbar-brand" href="usuarios">USUARIOS</a>
