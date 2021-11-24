@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 15:49:58
+/* Smarty version 3.1.39, created on 2021-11-24 19:55:47
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\TPEWEBII\templates\playerDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619e51160f9d58_60925762',
+  'unifunc' => 'content_619e8ab32ab373_58636648',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'de0f94917512f59eeecc5daccb12ab90a270bb96' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\TPEWEBII\\templates\\playerDetail.tpl',
-      1 => 1637765394,
+      1 => 1637780145,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_619e51160f9d58_60925762 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619e8ab32ab373_58636648 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -42,19 +42,30 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
             
         </ul>
     </div>
-    <?php if (($_SESSION)) {?>
+    
       <section id = seccionComentario}>
       <table class="table">
       <thead>
                 <th  scope="row">Comentario</th>
                 <th  scope="row">Puntaje</th>
                 <th scope="row">Usuario</th>
+                <th scope="row">Fecha</th>
             </thead>
 
             <tbody id="comments-list">
                     
             </tbody>
       </table>
+      <?php if (($_SESSION)) {?>
+        <button class="btn btn-warning" id="filtrarComment"> Filtrar por puntaje</button>
+        <select class="filtrarValor">
+                <option value="1">1 - Mediocre</option>
+                <option value="2">2 - Jugador malo</option>
+                <option value="3">3 - Jugador promedio</option>
+                <option value="4">4 - Buen jugador</option>
+                <option value="5">5 - Jugador destacado</option>
+        </select>
+      <button class="btn btn-dark" id="mostrarTodos"> Mostrar todos</button>
       
     
      <div clas="enviarComentario">
@@ -71,7 +82,7 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
             <label for="comentario" class="form-label">Su comentario</label>
             <input type="email" class="form-control" id="comentario" placeholder="Escriba su comentario">
         </div>
-        <button class="btn btn-dark" id="cargarComment">Enviar Comentario </a>
+        <button class="btn btn-dark" id="cargarComment">Enviar Comentario </button>
     <div>    
      
 

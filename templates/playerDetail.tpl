@@ -11,19 +11,30 @@
             
         </ul>
     </div>
-    {if ($smarty.session)}
+    
       <section id = seccionComentario}>
       <table class="table">
       <thead>
                 <th  scope="row">Comentario</th>
                 <th  scope="row">Puntaje</th>
                 <th scope="row">Usuario</th>
+                <th scope="row">Fecha</th>
             </thead>
 
             <tbody id="comments-list">
                     
             </tbody>
       </table>
+      {if ($smarty.session)}
+        <button class="btn btn-warning" id="filtrarComment"> Filtrar por puntaje</button>
+        <select class="filtrarValor">
+                <option value="1">1 - Mediocre</option>
+                <option value="2">2 - Jugador malo</option>
+                <option value="3">3 - Jugador promedio</option>
+                <option value="4">4 - Buen jugador</option>
+                <option value="5">5 - Jugador destacado</option>
+        </select>
+      <button class="btn btn-dark" id="mostrarTodos"> Mostrar todos</button>
       
     
      <div clas="enviarComentario">
@@ -40,7 +51,7 @@
             <label for="comentario" class="form-label">Su comentario</label>
             <input type="email" class="form-control" id="comentario" placeholder="Escriba su comentario">
         </div>
-        <button class="btn btn-dark" id="cargarComment">Enviar Comentario </a>
+        <button class="btn btn-dark" id="cargarComment">Enviar Comentario </button>
     <div>    
      
 

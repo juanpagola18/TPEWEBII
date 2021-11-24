@@ -26,7 +26,7 @@
             {if empty($smarty.session.usuario)}
           
                 <a class="navbar-brand" href="loginForm">REGISTRO</a>
-               
+               <input id="id_admin" type="hidden" value="2">
          
             {else}
                

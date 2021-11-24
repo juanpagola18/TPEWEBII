@@ -41,7 +41,7 @@ function getPlayerComments($params = null){
 }
 
 function insertComment(){
-    $this->authHelper->checkLoggedIn();
+   
 
     $data = $this->getBody();
 
@@ -75,7 +75,7 @@ function insertComment(){
     }
 
     function updateComment($params = null){
-        $this->authHelper->checkLoggedIn();
+        
         $id = $params[':ID'];
         $data = $this->getBody();
 
