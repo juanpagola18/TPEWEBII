@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
     async function mostrar(){
         
-            //event.preventDefault();
+            
             let comentario = document.querySelector("#input_id_comment").value;
             listaComentarios.innerHTML = "";
             

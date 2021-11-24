@@ -11,7 +11,7 @@
             
         </ul>
     </div>
-   
+    {if ($smarty.session)}
       <section id = seccionComentario}>
       <table class="table">
       <thead>
@@ -25,7 +25,7 @@
             </tbody>
       </table>
       
-    {if ($smarty.session)}
+    
      <div clas="enviarComentario">
         <h1>Agregue su comentario</h1>
             <select id="valuacion" aria-label="Default select example">

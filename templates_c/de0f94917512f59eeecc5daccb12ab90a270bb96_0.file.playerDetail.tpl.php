@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 15:15:55
+/* Smarty version 3.1.39, created on 2021-11-24 15:49:58
   from 'C:\xampp\htdocs\proyectos\TPEWEBII\TPEWEBII\templates\playerDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619e491b1a5d35_82573230',
+  'unifunc' => 'content_619e51160f9d58_60925762',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'de0f94917512f59eeecc5daccb12ab90a270bb96' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEWEBII\\TPEWEBII\\templates\\playerDetail.tpl',
-      1 => 1637763305,
+      1 => 1637765394,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_619e491b1a5d35_82573230 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619e51160f9d58_60925762 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -42,7 +42,7 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
             
         </ul>
     </div>
-   
+    <?php if (($_SESSION)) {?>
       <section id = seccionComentario}>
       <table class="table">
       <thead>
@@ -56,7 +56,7 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
             </tbody>
       </table>
       
-    <?php if (($_SESSION)) {?>
+    
      <div clas="enviarComentario">
         <h1>Agregue su comentario</h1>
             <select id="valuacion" aria-label="Default select example">
