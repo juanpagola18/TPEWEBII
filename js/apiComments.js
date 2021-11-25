@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let listaComentarios = document.querySelector('#comments-list');
     let btnAgregarComment = document.querySelector('#cargarComment');
-
+    let btnFiltrarComment = document.querySelector('#filtrarComment');
+    let btnMostrarTodos = document.querySelector('#mostrarTodos');
     
     
     async function mostrar(){
@@ -42,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function(){
                   
              listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + fecha + btnBorrar}</tr>`;
              btnAgregarComment.addEventListener("click", cargarComentario);
-
+             btnFiltrarComment.addEventListener("click", filtrarComentario);  
+             btnMostrarTodos.addEventListener("click", mostrarTodos);
             }
             else if (id_user ==  2) {
                 listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + fecha}</tr>`;
@@ -52,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function(){
             else {
                 listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + fecha}</tr>`;
                 btnAgregarComment.addEventListener("click", cargarComentario);
-
+                btnFiltrarComment.addEventListener("click", filtrarComentario);  
+                btnMostrarTodos.addEventListener("click", mostrarTodos);
             }
                 }
                 obtener_id_botones();
@@ -153,6 +156,48 @@ document.addEventListener("DOMContentLoaded", function(){
         }
 
     mostrar();
+    async function filtrarComentario(){
+        let valorFiltrar= document.querySelector(".filtrarValor");
+        
+        let comentario = document.querySelector("#input_id_comment").value;
+        listaComentarios.innerHTML = "";
+      
+        
+        
+     
+        try {
+            
+            let response = await fetch(`${url}/${comentario}`, {
+                method: "GET",
+            });
+            
+            if (response.status===200){
+
+                let comments = await response.json();
+                
+                for (const comment of comments ){
+                
+               
+               let comentario = `<td class="">${comment.comment}</td>`;
+               let puntuacion = `<td> ${comment.punctuation}</td>`;
+               let usuario = `<td> ${comment.nick}</td>`;
+               let fecha = `<td> ${comment.date}</td>`;
+               
+               if (comment.punctuation == valorFiltrar.value){    
+                listaComentarios.innerHTML += `<tr class="item">${ comentario + puntuacion + usuario + fecha }</tr>`;
+               } 
+              
+            }
+        }
+    }
+    catch (error) {
+        listaComentarios.innerHTML = error;
+    };
+}
+function mostrarTodos(){
+    mostrar();
+}
+    
     });
 
 
